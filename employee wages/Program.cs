@@ -13,25 +13,33 @@ namespace employee_wages
             int WORKING_HOURS = 8;
             int WORKING_DAYS = 20;
             int monthlyWorkingHour = 0;
+            int maxMonthlyWorkingHour = 100;
 
             Random rand = new Random();
 
             for (int day = 0; day < WORKING_DAYS; day++)
             {
-                int empAttendance = rand.Next(0, 2);
-
-                if (empAttendance == EMPLOYEE_PRESENT)
+                if (monthlyWorkingHour < maxMonthlyWorkingHour)
                 {
-                    dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
-                    monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                    int empAttendance = rand.Next(0, 2);
+
+                    if (empAttendance == EMPLOYEE_PRESENT)
+                    {
+                        dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
+                        monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                    }
+                    else
+                    {
+                        dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
+                        monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                    }
+                    monthlyWages = monthlyWages + dailyWages;
                 }
                 else
                 {
-                    dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
-                    monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                    monthlyWorkingHour = maxMonthlyWorkingHour;
+                    Console.WriteLine("The maximum monthly working hours completed.");
                 }
-                monthlyWages = monthlyWages + dailyWages;
-
             }
 
             Console.WriteLine("The monthly wages are " + monthlyWages);
