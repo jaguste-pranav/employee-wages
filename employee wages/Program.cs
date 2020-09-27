@@ -8,21 +8,33 @@ namespace employee_wages
         {
             int EMPLOYEE_PRESENT = 1;
             int HOURLY_WAGE = 20;
-            int totalWages;
+            int monthlyWages = 0;
+            int dailyWages;
             int WORKING_HOURS = 8;
+            int WORKING_DAYS = 20;
+            int monthlyWorkingHour = 0;
 
             Random rand = new Random();
-            int empAttendance = rand.Next(0, 2);
 
-            if (empAttendance == EMPLOYEE_PRESENT)
+            for (int day = 0; day < WORKING_DAYS; day++)
             {
-                totalWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
+                int empAttendance = rand.Next(0, 2);
+
+                if (empAttendance == EMPLOYEE_PRESENT)
+                {
+                    dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
+                    monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                }
+                else
+                {
+                    dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
+                    monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
+                }
+                monthlyWages = monthlyWages + dailyWages;
+
             }
-            else
-            {
-                totalWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
-            }
-            Console.WriteLine("The daily wage is " + totalWages);
+
+            Console.WriteLine("The monthly wages are " + monthlyWages);
         }
     }
 }
