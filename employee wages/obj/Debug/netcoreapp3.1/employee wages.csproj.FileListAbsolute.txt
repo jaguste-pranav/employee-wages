@@ -1,0 +1,13 @@
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.exe
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.deps.json
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.runtimeconfig.json
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.runtimeconfig.dev.json
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.dll
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\bin\Debug\netcoreapp3.1\employee wages.pdb
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.csprojAssemblyReference.cache
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.AssemblyInfoInputs.cache
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.AssemblyInfo.cs
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.csproj.CoreCompileInputs.cache
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.dll
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.pdb
+C:\Users\Pranav V Jaguste\source\repos\employee wages\employee wages\obj\Debug\netcoreapp3.1\employee wages.genruntimeconfig.cache
