@@ -8,41 +8,31 @@ namespace employee_wages
         {
             int EMPLOYEE_PRESENT = 1;
             int HOURLY_WAGE = 20;
-            int monthlyWages = 0;
-            int dailyWages;
-            int WORKING_HOURS = 8;
-            int WORKING_DAYS = 20;
-            int monthlyWorkingHour = 0;
-            int maxMonthlyWorkingHour = 100;
+            int totalWages;
+            int FULL_TIME_WORKING_HOURS = 8;
+            int PART_TIME_WORKING_HOURS = 4;
+            int PART_TIME = 0;
 
             Random rand = new Random();
+            int empAttendance = rand.Next(0, 2);
 
-            for (int day = 0; day < WORKING_DAYS; day++)
+            if (empAttendance == EMPLOYEE_PRESENT)
             {
-                if (monthlyWorkingHour < maxMonthlyWorkingHour)
+                int employeeStatus = rand.Next(0,2);
+                if(employeeStatus == PART_TIME)
                 {
-                    int empAttendance = rand.Next(0, 2);
-
-                    if (empAttendance == EMPLOYEE_PRESENT)
-                    {
-                        dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
-                        monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
-                    }
-                    else
-                    {
-                        dailyWages = HOURLY_WAGE * empAttendance * WORKING_HOURS;
-                        monthlyWorkingHour = monthlyWorkingHour + empAttendance * WORKING_HOURS;
-                    }
-                    monthlyWages = monthlyWages + dailyWages;
+                    totalWages = HOURLY_WAGE * empAttendance * PART_TIME_WORKING_HOURS;
                 }
                 else
                 {
-                    monthlyWorkingHour = maxMonthlyWorkingHour;
-                    Console.WriteLine("The maximum monthly working hours completed.");
+                    totalWages = HOURLY_WAGE * empAttendance * FULL_TIME_WORKING_HOURS;
                 }
             }
-
-            Console.WriteLine("The monthly wages are " + monthlyWages);
+            else
+            {
+                totalWages = HOURLY_WAGE * empAttendance * 0;
+            }
+            Console.WriteLine("The daily wage is " + totalWages);
         }
     }
 }
