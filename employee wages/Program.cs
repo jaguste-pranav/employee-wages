@@ -6,30 +6,23 @@ namespace employee_wages
     {
         static void Main(string[] args)
         {
-            int wagePerHour = 20;
-            int empHrs;
-            Random r = new Random();
+            int empHrs = 0, empWages = 0;
+            int totalWorkingHrs = 0, totalWorkingDays = 0;
 
-            int checkEmploymentStatus = r.Next(0, 3);
-            switch (checkEmploymentStatus)
+            ComputeWages compute = new ComputeWages();
+
+            while (totalWorkingHrs <= 10 && totalWorkingDays <= 2)
             {
-                case 0:
-                    empHrs = 0;
-                    Console.WriteLine("The daily wage is " + empHrs * wagePerHour);
-                    break;
-                case 1:
-                    empHrs = 4;
-                    Console.WriteLine("The daily wage is " + empHrs * wagePerHour);
-                    break;
-                case 2:
-                    empHrs = 8;
-                    Console.WriteLine("The daily wage is " + empHrs * wagePerHour);
-                    break;
-                default:
-                    Console.WriteLine("The wage does not exist");
-                    break;
+                Random rand = new Random();
+                int empStatus = rand.Next(0, 3);
 
+                totalWorkingDays++;
+                empHrs = compute.getEmployeeWorkingHours(empStatus);
+                Console.WriteLine("EmpHrs: "+empHrs);
+                empWages = empWages + compute.getEmployeeWages(empHrs);
+                totalWorkingHrs = totalWorkingHrs + empHrs;
             }
+            Console.WriteLine("The wages of employee is "+empWages);
         }
     }
 }
