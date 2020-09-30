@@ -11,12 +11,25 @@ namespace employee_wages
         const int FULL_TIME = 2;
         const int RATE_PER_HOUR = 20;
 
-        public int getEmpWages(string companyName, int ratePerHr, int workingDays, int maxHrsPerMonth)
+        private string companyName = "";
+        private int ratePerHr;
+        private int maxWorkingDays;
+        private int maxHrsPerMonth;
+
+        public void setCompanyInfo(string companyName, int ratePerHr, int maxWorkingDays, int maxHrsPerMonth)
+        {
+            this.companyName = companyName;
+            this.ratePerHr = ratePerHr;
+            this.maxWorkingDays = maxWorkingDays;
+            this.maxHrsPerMonth = maxHrsPerMonth;
+        }
+
+        public int getEmpWages()
         {
             int empWages, empHours;
             int totalWorkingHrs = 0, totalWorkingDays = 0;
 
-            while (totalWorkingHrs <= maxHrsPerMonth && totalWorkingDays <= workingDays)
+            while (totalWorkingHrs <= this.maxHrsPerMonth && totalWorkingDays <= this.maxWorkingDays)
             {
                 Random rand = new Random();
                 int empStatus = rand.Next(0, 3);
@@ -37,7 +50,7 @@ namespace employee_wages
                 totalWorkingHrs = totalWorkingHrs + empHours;
             }
             empWages = totalWorkingHrs * ratePerHr;
-            Console.WriteLine("The wages for employee at "+ companyName+ " is "+ empWages);
+            Console.WriteLine("The wages for employee at "+ this.companyName+ " is "+ empWages);
             return empWages;
         }
     }
