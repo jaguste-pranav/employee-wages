@@ -71,5 +71,23 @@ namespace WageComp
             }
             return empHours;
         }
+
+        public int getWagesFor(string company)
+        {
+            int wage = 0;
+            foreach(ComputeWage c in companyEmpWagesList)
+            {
+                if(c.company.Equals(company))
+                {
+                    wage = c.totalEmpWage;
+                    break;
+                }
+                else
+                {
+                    wage = 0;
+                }
+            }
+            return wage;
+        }
     }
 }
