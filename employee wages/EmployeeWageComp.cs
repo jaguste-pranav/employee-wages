@@ -43,7 +43,6 @@ namespace WageComp
                     totalEmpHours = empHours + totalEmpHours;
                     totalWagePerDay = empHours * companyEmpWage.ratePerHours;
                     totalWagePerMonth += totalWagePerDay;
-                    Console.WriteLine("Total Wage of the day.." + totalWagePerDay);
             }
             return totalWagePerMonth;
 
