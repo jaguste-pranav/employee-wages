@@ -11,7 +11,7 @@ namespace WageComp
             empWageBuilder.AddCompanyEmpWage("Reliance", 15, 14, 40);
 
             empWageBuilder.ComputeEmpWage();
-            Console.WriteLine("The wage is "+ empWageBuilder.getWagesFor("Dmart"));
+            Console.WriteLine("The wage is "+empWageBuilder.getWagesFor("Dmart"));
             Console.ReadKey();
         }
     }
@@ -22,10 +22,5 @@ namespace WageComp
 
         void ComputeEmpWage();
     }
-
-    //public interface IComputeWageV2
-    //{
-    //    int GetTotalWage(string company);
-    //}
 
 }
